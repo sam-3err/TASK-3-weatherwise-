@@ -28,5 +28,4 @@ The app features a clean UI, animated forecast graph, favorites management, and 
 
 ---
 
-## 📁 Project Structure
 
