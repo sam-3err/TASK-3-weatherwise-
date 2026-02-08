@@ -13,6 +13,7 @@ export function renderForecast(list) {
     });
   }
 
+
   drawGraph(daily);
 }
 
@@ -26,7 +27,6 @@ function drawGraph(data) {
   const max = Math.max(...temps) + 3;
   const min = Math.min(...temps) - 3;
 
-  // Background grid
   ctx.strokeStyle = "rgba(255,255,255,0.08)";
   ctx.lineWidth = 1;
   for (let i = 0; i <= 4; i++) {
@@ -37,7 +37,6 @@ function drawGraph(data) {
     ctx.stroke();
   }
 
-  // Build points
   const points = data.map((d, i) => {
     const x = padding + i * ((w - padding * 2) / (data.length - 1));
     const y = h - padding -
@@ -45,7 +44,6 @@ function drawGraph(data) {
     return { x, y, ...d };
   });
 
-  // Line stroke
   ctx.beginPath();
   points.forEach((p, i) => (i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)));
   const lineGrad = ctx.createLinearGradient(padding, 0, w - padding, 0);
@@ -58,7 +56,6 @@ function drawGraph(data) {
   ctx.stroke();
   ctx.shadowBlur = 0;
 
-  // Fill area under curve
   ctx.lineTo(points[points.length - 1].x, h - padding);
   ctx.lineTo(points[0].x, h - padding);
   ctx.closePath();
@@ -68,7 +65,6 @@ function drawGraph(data) {
   ctx.fillStyle = fillGrad;
   ctx.fill();
 
-  // Points + labels
   ctx.fillStyle = "#ffffff";
   ctx.font = "12px Inter, sans-serif";
   points.forEach(p => {
