@@ -14,8 +14,6 @@ body {
   height: 100vh;
 }
 
-/* ================= SIDEBAR ================= */
-
 .sidebar {
   width: 260px;
   padding: 20px;
@@ -36,7 +34,6 @@ body {
   color: #18e0c4;
 }
 
-/* ================= MAIN ================= */
 
 .main {
   flex: 1;
@@ -44,7 +41,6 @@ body {
   overflow-y: auto;
 }
 
-/* ================= HEADER ================= */
 
 .header {
   display: flex;
@@ -84,7 +80,6 @@ body {
   cursor: pointer;
 }
 
-/* ================= CARD ================= */
 
 .card {
   background: linear-gradient(180deg, #151518, #0f0f12);
@@ -99,7 +94,6 @@ body {
   gap: 20px;
 }
 
-/* ================= WELCOME ================= */
 
 .welcome-inline {
   text-align: center;
@@ -133,15 +127,12 @@ body {
 .dots span:nth-child(2) { animation-delay: .2s; }
 .dots span:nth-child(3) { animation-delay: .4s; }
 
-/* ================= WEATHER CONTENT ================= */
 
-/* Hidden by default */
 #weather-content {
   display: none;
   opacity: 0;
 }
 
-/* Shown after search */
 #weather-content.show {
   display: flex;
   opacity: 1;
@@ -169,7 +160,6 @@ body {
   color: #bfbfbf;
 }
 
-/* ================= WEATHER STATS ================= */
 
 .weather-right {
   display: flex;
@@ -191,16 +181,14 @@ body {
   color: #fff;
 }
 
-/* ================= FORECAST ================= */
 
-/* Hidden by default */
 .forecast {
   margin-top: 40px;
   display: none;
   opacity: 0;
 }
 
-/* Shown after search */
+
 .forecast.show {
   display: block;
   opacity: 1;
@@ -217,7 +205,6 @@ canvas {
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* ================= FAVORITE STAR ================= */
 
 #fav-btn {
   font-size: 22px;
@@ -233,7 +220,7 @@ canvas {
   transform: scale(1.2);
 }
 
-/* ================= ANIMATIONS ================= */
+
 
 @keyframes fadeIn {
   from {
@@ -261,3 +248,4 @@ canvas {
   0%, 80%, 100% { transform: scale(0); }
   40% { transform: scale(1); }
 }
+
