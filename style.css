@@ -14,6 +14,7 @@ body {
   height: 100vh;
 }
 
+/* ================= SIDEBAR ================= */
 
 .sidebar {
   width: 260px;
@@ -35,6 +36,7 @@ body {
   color: #18e0c4;
 }
 
+/* ================= MAIN ================= */
 
 .main {
   flex: 1;
@@ -42,7 +44,8 @@ body {
   overflow-y: auto;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -81,6 +84,7 @@ body {
   cursor: pointer;
 }
 
+/* ================= CARD ================= */
 
 .card {
   background: linear-gradient(180deg, #151518, #0f0f12);
@@ -95,6 +99,7 @@ body {
   gap: 20px;
 }
 
+/* ================= WELCOME ================= */
 
 .welcome-inline {
   text-align: center;
@@ -128,9 +133,18 @@ body {
 .dots span:nth-child(2) { animation-delay: .2s; }
 .dots span:nth-child(3) { animation-delay: .4s; }
 
+/* ================= WEATHER CONTENT ================= */
 
+/* Hidden by default */
 #weather-content {
   display: none;
+  opacity: 0;
+}
+
+/* Shown after search */
+#weather-content.show {
+  display: flex;
+  opacity: 1;
   animation: fadeIn 0.6s ease forwards;
 }
 
@@ -146,18 +160,6 @@ body {
   gap: 12px;
 }
 
-#fav-btn {
-  background: none;
-  border: none;
-  font-size: 22px;
-  cursor: pointer;
-  color: #ff6cb4;
-}
-
-#fav-btn.active {
-  color: #ffd700;
-}
-
 .temp h1 {
   font-size: 64px;
   margin: 0;
@@ -167,6 +169,7 @@ body {
   color: #bfbfbf;
 }
 
+/* ================= WEATHER STATS ================= */
 
 .weather-right {
   display: flex;
@@ -188,26 +191,70 @@ body {
   color: #fff;
 }
 
+/* ================= FORECAST ================= */
+
+/* Hidden by default */
 .forecast {
   margin-top: 40px;
   display: none;
+  opacity: 0;
+}
+
+/* Shown after search */
+.forecast.show {
+  display: block;
+  opacity: 1;
   animation: fadeIn 0.6s ease forwards;
 }
 
 canvas {
-  background: #111;
+  background: radial-gradient(circle at top left, #121824, #0b0e14);
   border-radius: 16px;
   margin-top: 16px;
+  box-shadow:
+    inset 0 0 30px rgba(24, 224, 196, 0.08),
+    0 12px 28px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+/* ================= FAVORITE STAR ================= */
+
+#fav-btn {
+  font-size: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+#fav-btn.active {
+  color: gold;
+  transform: scale(1.2);
+}
+
+/* ================= ANIMATIONS ================= */
+
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes pulse {
