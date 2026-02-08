@@ -20,15 +20,14 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // 🔍 Search button click
   searchBtn.addEventListener("click", searchCity);
 
-  // ⌨️ Enter key search
+
   input.addEventListener("keydown", e => {
     if (e.key === "Enter") searchCity();
   });
 
-  // ⭐ Favorite button
+
   if (favBtn) {
     favBtn.addEventListener("click", () => {
       if (store.city) toggleFavorite(store.city);
